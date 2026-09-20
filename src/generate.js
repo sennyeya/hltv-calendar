@@ -3,6 +3,7 @@ import path from "node:path";
 import ical from "ical-generator";
 
 const API = "https://api.pandascore.co/csgo/matches/upcoming";
+const MAX_PAGES = 10;
 const TEAM_ALIASES = {
   falcons: ["falcons", "team falcons"],
   spirit: ["spirit", "team spirit"],
@@ -68,23 +69,38 @@ async function fetchMatches() {
   const token = process.env.PANDASCORE_API_KEY;
   if (!token) throw new Error("PANDASCORE_API_KEY is not set");
 
-  const url = new URL(API);
-  url.searchParams.set("per_page", "100");
-  url.searchParams.set("sort", "begin_at");
+  const matches = [];
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const url = new URL(API);
+    url.searchParams.set("per_page", "100");
+    url.searchParams.set("page", String(page));
+    url.searchParams.set("sort", "begin_at");
 
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/json",
-      "User-Agent": "hltv-calendar/1.0",
-    },
-  });
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
+        "User-Agent": "hltv-calendar/1.0",
+      },
+    });
 
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(`PandaScore returned HTTP ${response.status}: ${body.slice(0, 500)}`);
+    if (!response.ok) {
+      const body = await response.text();
+      throw new Error(`PandaScore returned HTTP ${response.status}: ${body.slice(0, 500)}`);
+    }
+
+    const pageMatches = await response.json();
+    if (!Array.isArray(pageMatches)) throw new Error("Unexpected PandaScore response");
+    matches.push(...pageMatches);
+
+    // Stop once PandaScore has no next page, or once both teams have appeared.
+    const link = response.headers.get("link") ?? "";
+    const found = new Set(
+      matches.flatMap((match) => opponents(match).map(slugForTeam).filter(Boolean))
+    );
+    if ((found.has("falcons") && found.has("spirit")) || !link.includes('rel="next"')) break;
   }
-  return response.json();
+  return matches;
 }
 
 async function main() {

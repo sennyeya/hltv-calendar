@@ -132,7 +132,14 @@ async function main() {
     `<!doctype html><meta charset="utf-8"><title>HLTV Calendar</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px system-ui;max-width:42rem;margin:3rem auto;padding:0 1rem;line-height:1.5}a{display:block;margin:.8rem 0}</style><h1>HLTV Calendar</h1><p>Spoiler-free CS2 calendar feeds for Falcons and Team Spirit, powered by PandaScore.</p><a href="cs2/falcons.ics">Falcons</a><a href="cs2/spirit.ics">Team Spirit</a><a href="cs2/falcons-spirit.ics">Falcons + Team Spirit</a><small>Last generated: ${generated}</small>`,
     "utf8"
   );
-  console.log(`Fetched ${matches.length} upcoming matches; ${relevant.length} involve Falcons or Team Spirit.`);
+  const counts = Object.keys(TEAM_NAMES).map((slug) => {
+    const count = relevant.filter((match) =>
+      opponents(match).map(slugForTeam).includes(slug)
+    ).length;
+    return `${TEAM_NAMES[slug]}: ${count}`;
+  });
+  console.log(`Fetched ${matches.length} upcoming matches; ${counts.join(" | ")}`);
+
 }
 
 main().catch((error) => {

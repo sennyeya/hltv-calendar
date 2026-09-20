@@ -2,147 +2,161 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import ical from "ical-generator";
 
-const API = "https://api.pandascore.co/csgo/matches/upcoming";
+const PANDASCORE_API = "https://api.pandascore.co/csgo/matches/upcoming";
+const FOOTBALL_API = "https://api.football-data.org/v4";
 const MAX_PAGES = 10;
-const TEAM_ALIASES = {
+
+const CS2_ALIASES = {
   falcons: ["falcons", "team falcons"],
   spirit: ["spirit", "team spirit"],
 };
-const TEAM_NAMES = { falcons: "Falcons", spirit: "Team Spirit" };
-const OUTPUTS = [
-  ["falcons", ["falcons"]],
-  ["spirit", ["spirit"]],
-  ["falcons-spirit", ["falcons", "spirit"]],
-];
-const outDir = path.resolve("public/cs2");
+const CS2_NAMES = { falcons: "Falcons", spirit: "Team Spirit" };
 
-function clean(value) {
-  return String(value ?? "").replace(/\s+/g, " ").trim();
+const SOCCER_ALIASES = {
+  everton: ["everton", "everton fc"],
+  brighton: ["brighton & hove albion", "brighton & hove albion fc", "brighton"],
+  "manchester-united": ["manchester united", "manchester united fc", "man united"],
+  bayern: ["fc bayern münchen", "bayern münchen", "bayern munich", "fc bayern munich"],
+};
+const SOCCER_NAMES = {
+  everton: "Everton",
+  brighton: "Brighton",
+  "manchester-united": "Manchester United",
+  bayern: "Bayern Munich",
+};
+const SOCCER_COMPETITIONS = ["PL", "BL1", "CL"];
+
+function clean(v) { return String(v ?? "").replace(/\s+/g, " ").trim(); }
+function normalize(v) { return clean(v).toLowerCase(); }
+function cs2Opponents(m) { return (m.opponents ?? []).map(x => x.opponent).filter(Boolean); }
+
+function cs2Slug(team) {
+  const values = [team?.name, team?.acronym, team?.slug].filter(Boolean).map(normalize);
+  return Object.entries(CS2_ALIASES).find(([, aliases]) => aliases.some(a => values.includes(a)))?.[0];
+}
+function soccerSlug(team) {
+  const value = normalize(team?.name);
+  return Object.entries(SOCCER_ALIASES).find(([, aliases]) => aliases.includes(value))?.[0];
 }
 
-function slugForTeam(team) {
-  const values = [team?.name, team?.acronym, team?.slug]
-    .filter(Boolean)
-    .map((v) => clean(v).toLowerCase());
-  return Object.entries(TEAM_ALIASES).find(([, aliases]) =>
-    aliases.some((alias) => values.includes(alias))
-  )?.[0];
-}
-
-function opponents(match) {
-  return (match.opponents ?? []).map((entry) => entry.opponent).filter(Boolean);
-}
-
-function toEvent(match) {
-  const teams = opponents(match);
+function cs2Event(match) {
+  const teams = cs2Opponents(match);
   if (teams.length !== 2 || !match.begin_at) return null;
   const start = new Date(match.begin_at);
   if (Number.isNaN(start.getTime())) return null;
-  const end = match.end_at ? new Date(match.end_at) : new Date(start.getTime() + 3 * 60 * 60 * 1000);
-  const league = clean(match.league?.name);
-  const serie = clean(match.serie?.full_name || match.serie?.name);
-  const tournament = clean(match.tournament?.name);
+  const parsedEnd = match.end_at ? new Date(match.end_at) : null;
   return {
-    id: `pandascore-match-${match.id}@hltv-calendar`,
+    id: `pandascore-${match.id}@sports-calendar`,
     start,
-    end: Number.isNaN(end.getTime()) ? new Date(start.getTime() + 3 * 60 * 60 * 1000) : end,
-    summary: `${clean(teams[0].name)} vs ${clean(teams[1].name)}`,
-    description: [league, serie, tournament].filter(Boolean).join(" · "),
+    end: parsedEnd && !Number.isNaN(parsedEnd.getTime()) ? parsedEnd : new Date(start.getTime() + 3 * 3600000),
+    summary: `🎮 ${clean(teams[0].name)} vs ${clean(teams[1].name)}`,
+    description: [match.league?.name, match.serie?.full_name || match.serie?.name, match.tournament?.name].map(clean).filter(Boolean).join(" · "),
     url: match.official_stream_url || undefined,
   };
 }
 
-function makeCalendar(name, matches) {
+function soccerEvent(match) {
+  if (!match.utcDate || !match.homeTeam?.name || !match.awayTeam?.name) return null;
+  const start = new Date(match.utcDate);
+  if (Number.isNaN(start.getTime())) return null;
+  return {
+    id: `football-data-${match.id}@sports-calendar`,
+    start,
+    end: new Date(start.getTime() + 2 * 3600000),
+    summary: `⚽ ${clean(match.homeTeam.name)} vs ${clean(match.awayTeam.name)}`,
+    description: clean(match.competition?.name),
+  };
+}
+
+function calendarString(name, events) {
   const calendar = ical({
     name,
-    prodId: { company: "hltv-calendar", product: "CS2 calendar" },
+    prodId: { company: "sports-calendar", product: "Personal sports calendar" },
     timezone: "UTC",
   });
-  for (const match of matches) {
-    const event = toEvent(match);
-    if (event) calendar.createEvent(event);
-  }
+  for (const event of events) if (event) calendar.createEvent(event);
   return calendar.toString();
 }
 
-async function fetchMatches() {
+async function fetchCs2() {
   const token = process.env.PANDASCORE_API_KEY;
   if (!token) throw new Error("PANDASCORE_API_KEY is not set");
-
   const matches = [];
   for (let page = 1; page <= MAX_PAGES; page++) {
-    const url = new URL(API);
+    const url = new URL(PANDASCORE_API);
     url.searchParams.set("per_page", "100");
     url.searchParams.set("page", String(page));
     url.searchParams.set("sort", "begin_at");
-
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: "application/json",
-        "User-Agent": "hltv-calendar/1.0",
-      },
-    });
-
-    if (!response.ok) {
-      const body = await response.text();
-      throw new Error(`PandaScore returned HTTP ${response.status}: ${body.slice(0, 500)}`);
-    }
-
+    const response = await fetch(url, { headers: { Authorization: `Bearer ${token}`, Accept: "application/json", "User-Agent": "sports-calendar/1.0" } });
+    if (!response.ok) throw new Error(`PandaScore HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
     const pageMatches = await response.json();
     if (!Array.isArray(pageMatches)) throw new Error("Unexpected PandaScore response");
     matches.push(...pageMatches);
-
-    // Stop once PandaScore has no next page, or once both teams have appeared.
     const link = response.headers.get("link") ?? "";
-    const found = new Set(
-      matches.flatMap((match) => opponents(match).map(slugForTeam).filter(Boolean))
-    );
-    if ((found.has("falcons") && found.has("spirit")) || !link.includes('rel="next"')) break;
+    if (!link.includes('rel="next"')) break;
   }
   return matches;
 }
 
-async function main() {
-  const matches = await fetchMatches();
-  if (!Array.isArray(matches)) throw new Error("Unexpected PandaScore response");
-
-  const relevant = matches.filter((match) => {
-    const slugs = opponents(match).map(slugForTeam);
-    return slugs.includes("falcons") || slugs.includes("spirit");
-  });
-
-  await fs.mkdir(outDir, { recursive: true });
-
-  for (const [filename, wanted] of OUTPUTS) {
-    const selected = relevant.filter((match) => {
-      const slugs = opponents(match).map(slugForTeam);
-      return wanted.some((slug) => slugs.includes(slug));
-    });
-    await fs.writeFile(
-      path.join(outDir, `${filename}.ics`),
-      makeCalendar(`CS2 — ${wanted.map((slug) => TEAM_NAMES[slug]).join(" + ")}`, selected),
-      "utf8"
-    );
+async function fetchSoccer() {
+  const token = process.env.FOOTBALL_DATA_API_KEY;
+  if (!token) {
+    console.log("FOOTBALL_DATA_API_KEY not set; soccer feeds will be empty until it is added.");
+    return [];
   }
-
-  const generated = new Date().toISOString();
-  await fs.writeFile(
-    path.resolve("public/index.html"),
-    `<!doctype html><meta charset="utf-8"><title>HLTV Calendar</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px system-ui;max-width:42rem;margin:3rem auto;padding:0 1rem;line-height:1.5}a{display:block;margin:.8rem 0}</style><h1>HLTV Calendar</h1><p>Spoiler-free CS2 calendar feeds for Falcons and Team Spirit, powered by PandaScore.</p><a href="cs2/falcons.ics">Falcons</a><a href="cs2/spirit.ics">Team Spirit</a><a href="cs2/falcons-spirit.ics">Falcons + Team Spirit</a><small>Last generated: ${generated}</small>`,
-    "utf8"
-  );
-  const counts = Object.keys(TEAM_NAMES).map((slug) => {
-    const count = relevant.filter((match) =>
-      opponents(match).map(slugForTeam).includes(slug)
-    ).length;
-    return `${TEAM_NAMES[slug]}: ${count}`;
-  });
-  console.log(`Fetched ${matches.length} upcoming matches; ${counts.join(" | ")}`);
-
+  const byId = new Map();
+  for (const competition of SOCCER_COMPETITIONS) {
+    const url = `${FOOTBALL_API}/competitions/${competition}/matches?status=SCHEDULED`;
+    const response = await fetch(url, { headers: { "X-Auth-Token": token, Accept: "application/json" } });
+    if (!response.ok) throw new Error(`football-data.org ${competition} HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
+    const data = await response.json();
+    for (const match of data.matches ?? []) byId.set(match.id, match);
+  }
+  return [...byId.values()];
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+async function main() {
+  const [cs2Matches, soccerMatches] = await Promise.all([fetchCs2(), fetchSoccer()]);
+
+  const cs2Relevant = cs2Matches.filter(m => cs2Opponents(m).map(cs2Slug).some(Boolean));
+  const soccerRelevant = soccerMatches.filter(m => [soccerSlug(m.homeTeam), soccerSlug(m.awayTeam)].some(Boolean));
+
+  await fs.mkdir(path.resolve("public/cs2"), { recursive: true });
+  await fs.mkdir(path.resolve("public/soccer"), { recursive: true });
+
+  for (const slug of Object.keys(CS2_NAMES)) {
+    const events = cs2Relevant.filter(m => cs2Opponents(m).map(cs2Slug).includes(slug)).map(cs2Event);
+    await fs.writeFile(path.resolve(`public/cs2/${slug}.ics`), calendarString(`CS2 — ${CS2_NAMES[slug]}`, events));
+  }
+  await fs.writeFile(path.resolve("public/cs2/falcons-spirit.ics"), calendarString("CS2 — Falcons + Team Spirit", cs2Relevant.map(cs2Event)));
+
+  for (const slug of Object.keys(SOCCER_NAMES)) {
+    const events = soccerRelevant.filter(m => [soccerSlug(m.homeTeam), soccerSlug(m.awayTeam)].includes(slug)).map(soccerEvent);
+    await fs.writeFile(path.resolve(`public/soccer/${slug}.ics`), calendarString(`Soccer — ${SOCCER_NAMES[slug]}`, events));
+  }
+
+  const allEvents = [...cs2Relevant.map(cs2Event), ...soccerRelevant.map(soccerEvent)]
+    .filter(Boolean).sort((a, b) => a.start - b.start);
+  await fs.writeFile(path.resolve("public/all.ics"), calendarString("Sports", allEvents));
+
+  const generated = new Date().toISOString();
+  const links = [
+    ["all.ics", "Everything"],
+    ["cs2/falcons.ics", "Falcons"],
+    ["cs2/spirit.ics", "Team Spirit"],
+    ["soccer/everton.ics", "Everton"],
+    ["soccer/brighton.ics", "Brighton"],
+    ["soccer/manchester-united.ics", "Manchester United"],
+    ["soccer/bayern.ics", "Bayern Munich"],
+  ].map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
+  await fs.writeFile(path.resolve("public/index.html"),
+    `<!doctype html><meta charset="utf-8"><title>Sports Calendar</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px system-ui;max-width:42rem;margin:3rem auto;padding:0 1rem;line-height:1.5}a{display:block;margin:.8rem 0}</style><h1>Sports Calendar</h1><p>Spoiler-free schedules for the teams you follow.</p>${links}<small>Last generated: ${generated}</small>`);
+
+  const cs2Counts = Object.keys(CS2_NAMES).map(slug => `${CS2_NAMES[slug]}: ${cs2Relevant.filter(m => cs2Opponents(m).map(cs2Slug).includes(slug)).length}`);
+  const soccerCounts = Object.keys(SOCCER_NAMES).map(slug => `${SOCCER_NAMES[slug]}: ${soccerRelevant.filter(m => [soccerSlug(m.homeTeam), soccerSlug(m.awayTeam)].includes(slug)).length}`);
+  console.log(`CS2: ${cs2Counts.join(" | ")}`);
+  console.log(`Soccer: ${soccerCounts.join(" | ")}`);
+  console.log(`Unified feed: ${allEvents.length} upcoming events`);
+}
+
+main().catch(error => { console.error(error); process.exit(1); });

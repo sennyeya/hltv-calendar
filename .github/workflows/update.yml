@@ -35,6 +35,7 @@ jobs:
         run: npm run generate
         env:
           PANDASCORE_API_KEY: ${{ secrets.PANDASCORE_API_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

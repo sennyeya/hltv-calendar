@@ -1,0 +1,1101 @@
+{
+  "football-data-560543@sports-calendar": {
+    "id": "football-data-560543@sports-calendar",
+    "start": "2026-08-22T11:30:00.000Z",
+    "end": "2026-08-22T13:30:00.000Z",
+    "summary": "⚽ Hull City AFC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560546@sports-calendar": {
+    "id": "football-data-560546@sports-calendar",
+    "start": "2026-08-22T14:00:00.000Z",
+    "end": "2026-08-22T16:00:00.000Z",
+    "summary": "⚽ Everton FC vs Crystal Palace FC",
+    "description": "Premier League"
+  },
+  "football-data-560549@sports-calendar": {
+    "id": "football-data-560549@sports-calendar",
+    "start": "2026-08-23T13:00:00.000Z",
+    "end": "2026-08-23T15:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Aston Villa FC",
+    "description": "Premier League"
+  },
+  "football-data-560560@sports-calendar": {
+    "id": "football-data-560560@sports-calendar",
+    "start": "2026-08-29T14:00:00.000Z",
+    "end": "2026-08-29T16:00:00.000Z",
+    "summary": "⚽ AFC Bournemouth vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560556@sports-calendar": {
+    "id": "football-data-560556@sports-calendar",
+    "start": "2026-08-30T13:00:00.000Z",
+    "end": "2026-08-30T15:00:00.000Z",
+    "summary": "⚽ Chelsea FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560553@sports-calendar": {
+    "id": "football-data-560553@sports-calendar",
+    "start": "2026-08-30T15:30:00.000Z",
+    "end": "2026-08-30T17:30:00.000Z",
+    "summary": "⚽ Manchester United FC vs Ipswich Town FC",
+    "description": "Premier League"
+  },
+  "football-data-560564@sports-calendar": {
+    "id": "football-data-560564@sports-calendar",
+    "start": "2026-09-05T14:00:00.000Z",
+    "end": "2026-09-05T16:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Leeds United FC",
+    "description": "Premier League"
+  },
+  "football-data-560567@sports-calendar": {
+    "id": "football-data-560567@sports-calendar",
+    "start": "2026-09-06T13:00:00.000Z",
+    "end": "2026-09-06T15:00:00.000Z",
+    "summary": "⚽ Everton FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560575@sports-calendar": {
+    "id": "football-data-560575@sports-calendar",
+    "start": "2026-09-12T16:30:00.000Z",
+    "end": "2026-09-12T18:30:00.000Z",
+    "summary": "⚽ Tottenham Hotspur FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560578@sports-calendar": {
+    "id": "football-data-560578@sports-calendar",
+    "start": "2026-09-13T13:00:00.000Z",
+    "end": "2026-09-13T15:00:00.000Z",
+    "summary": "⚽ Coventry City FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560580@sports-calendar": {
+    "id": "football-data-560580@sports-calendar",
+    "start": "2026-09-13T15:30:00.000Z",
+    "end": "2026-09-13T17:30:00.000Z",
+    "summary": "⚽ Manchester United FC vs Manchester City FC",
+    "description": "Premier League"
+  },
+  "football-data-560584@sports-calendar": {
+    "id": "football-data-560584@sports-calendar",
+    "start": "2026-09-19T14:00:00.000Z",
+    "end": "2026-09-19T16:00:00.000Z",
+    "summary": "⚽ Everton FC vs Ipswich Town FC",
+    "description": "Premier League"
+  },
+  "football-data-560586@sports-calendar": {
+    "id": "football-data-560586@sports-calendar",
+    "start": "2026-09-19T14:00:00.000Z",
+    "end": "2026-09-19T16:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Arsenal FC",
+    "description": "Premier League"
+  },
+  "football-data-560583@sports-calendar": {
+    "id": "football-data-560583@sports-calendar",
+    "start": "2026-09-20T15:30:00.000Z",
+    "end": "2026-09-20T17:30:00.000Z",
+    "summary": "⚽ Fulham FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560592@sports-calendar": {
+    "id": "football-data-560592@sports-calendar",
+    "start": "2026-10-10T14:00:00.000Z",
+    "end": "2026-10-10T16:00:00.000Z",
+    "summary": "⚽ Sunderland AFC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560600@sports-calendar": {
+    "id": "football-data-560600@sports-calendar",
+    "start": "2026-10-10T16:30:00.000Z",
+    "end": "2026-10-10T18:30:00.000Z",
+    "summary": "⚽ Manchester United FC vs Tottenham Hotspur FC",
+    "description": "Premier League"
+  },
+  "football-data-560594@sports-calendar": {
+    "id": "football-data-560594@sports-calendar",
+    "start": "2026-10-11T13:00:00.000Z",
+    "end": "2026-10-11T15:00:00.000Z",
+    "summary": "⚽ Hull City AFC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560603@sports-calendar": {
+    "id": "football-data-560603@sports-calendar",
+    "start": "2026-10-17T11:30:00.000Z",
+    "end": "2026-10-17T13:30:00.000Z",
+    "summary": "⚽ Everton FC vs Chelsea FC",
+    "description": "Premier League"
+  },
+  "football-data-560605@sports-calendar": {
+    "id": "football-data-560605@sports-calendar",
+    "start": "2026-10-18T13:00:00.000Z",
+    "end": "2026-10-18T15:00:00.000Z",
+    "summary": "⚽ Leeds United FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560609@sports-calendar": {
+    "id": "football-data-560609@sports-calendar",
+    "start": "2026-10-18T13:00:00.000Z",
+    "end": "2026-10-18T15:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Crystal Palace FC",
+    "description": "Premier League"
+  },
+  "football-data-560616@sports-calendar": {
+    "id": "football-data-560616@sports-calendar",
+    "start": "2026-10-24T14:00:00.000Z",
+    "end": "2026-10-24T16:00:00.000Z",
+    "summary": "⚽ Arsenal FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560612@sports-calendar": {
+    "id": "football-data-560612@sports-calendar",
+    "start": "2026-10-25T14:00:00.000Z",
+    "end": "2026-10-25T16:00:00.000Z",
+    "summary": "⚽ Liverpool FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560615@sports-calendar": {
+    "id": "football-data-560615@sports-calendar",
+    "start": "2026-10-25T14:00:00.000Z",
+    "end": "2026-10-25T16:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs AFC Bournemouth",
+    "description": "Premier League"
+  },
+  "football-data-560626@sports-calendar": {
+    "id": "football-data-560626@sports-calendar",
+    "start": "2026-10-31T12:30:00.000Z",
+    "end": "2026-10-31T14:30:00.000Z",
+    "summary": "⚽ Chelsea FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560623@sports-calendar": {
+    "id": "football-data-560623@sports-calendar",
+    "start": "2026-10-31T15:00:00.000Z",
+    "end": "2026-10-31T17:00:00.000Z",
+    "summary": "⚽ Manchester City FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560622@sports-calendar": {
+    "id": "football-data-560622@sports-calendar",
+    "start": "2026-11-02T20:00:00.000Z",
+    "end": "2026-11-02T22:00:00.000Z",
+    "summary": "⚽ Newcastle United FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560634@sports-calendar": {
+    "id": "football-data-560634@sports-calendar",
+    "start": "2026-11-07T15:00:00.000Z",
+    "end": "2026-11-07T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Coventry City FC",
+    "description": "Premier League"
+  },
+  "football-data-560638@sports-calendar": {
+    "id": "football-data-560638@sports-calendar",
+    "start": "2026-11-07T15:00:00.000Z",
+    "end": "2026-11-07T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Brentford FC",
+    "description": "Premier League"
+  },
+  "football-data-560639@sports-calendar": {
+    "id": "football-data-560639@sports-calendar",
+    "start": "2026-11-07T15:00:00.000Z",
+    "end": "2026-11-07T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Aston Villa FC",
+    "description": "Premier League"
+  },
+  "football-data-560645@sports-calendar": {
+    "id": "football-data-560645@sports-calendar",
+    "start": "2026-11-21T15:00:00.000Z",
+    "end": "2026-11-21T17:00:00.000Z",
+    "summary": "⚽ Liverpool FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560646@sports-calendar": {
+    "id": "football-data-560646@sports-calendar",
+    "start": "2026-11-21T15:00:00.000Z",
+    "end": "2026-11-21T17:00:00.000Z",
+    "summary": "⚽ Hull City AFC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560649@sports-calendar": {
+    "id": "football-data-560649@sports-calendar",
+    "start": "2026-11-21T15:00:00.000Z",
+    "end": "2026-11-21T17:00:00.000Z",
+    "summary": "⚽ Brentford FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560655@sports-calendar": {
+    "id": "football-data-560655@sports-calendar",
+    "start": "2026-11-28T15:00:00.000Z",
+    "end": "2026-11-28T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Brentford FC",
+    "description": "Premier League"
+  },
+  "football-data-560656@sports-calendar": {
+    "id": "football-data-560656@sports-calendar",
+    "start": "2026-11-28T15:00:00.000Z",
+    "end": "2026-11-28T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Liverpool FC",
+    "description": "Premier League"
+  },
+  "football-data-560659@sports-calendar": {
+    "id": "football-data-560659@sports-calendar",
+    "start": "2026-11-28T15:00:00.000Z",
+    "end": "2026-11-28T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Newcastle United FC",
+    "description": "Premier League"
+  },
+  "football-data-560666@sports-calendar": {
+    "id": "football-data-560666@sports-calendar",
+    "start": "2026-12-02T20:00:00.000Z",
+    "end": "2026-12-02T22:00:00.000Z",
+    "summary": "⚽ Aston Villa FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560670@sports-calendar": {
+    "id": "football-data-560670@sports-calendar",
+    "start": "2026-12-02T20:00:00.000Z",
+    "end": "2026-12-02T22:00:00.000Z",
+    "summary": "⚽ Newcastle United FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560671@sports-calendar": {
+    "id": "football-data-560671@sports-calendar",
+    "start": "2026-12-02T20:00:00.000Z",
+    "end": "2026-12-02T22:00:00.000Z",
+    "summary": "⚽ AFC Bournemouth vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560673@sports-calendar": {
+    "id": "football-data-560673@sports-calendar",
+    "start": "2026-12-05T15:00:00.000Z",
+    "end": "2026-12-05T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Coventry City FC",
+    "description": "Premier League"
+  },
+  "football-data-560680@sports-calendar": {
+    "id": "football-data-560680@sports-calendar",
+    "start": "2026-12-05T15:00:00.000Z",
+    "end": "2026-12-05T17:00:00.000Z",
+    "summary": "⚽ Nottingham Forest FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560681@sports-calendar": {
+    "id": "football-data-560681@sports-calendar",
+    "start": "2026-12-05T15:00:00.000Z",
+    "end": "2026-12-05T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Fulham FC",
+    "description": "Premier League"
+  },
+  "football-data-560683@sports-calendar": {
+    "id": "football-data-560683@sports-calendar",
+    "start": "2026-12-12T15:00:00.000Z",
+    "end": "2026-12-12T17:00:00.000Z",
+    "summary": "⚽ Crystal Palace FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560685@sports-calendar": {
+    "id": "football-data-560685@sports-calendar",
+    "start": "2026-12-12T15:00:00.000Z",
+    "end": "2026-12-12T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560693@sports-calendar": {
+    "id": "football-data-560693@sports-calendar",
+    "start": "2026-12-19T15:00:00.000Z",
+    "end": "2026-12-19T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Ipswich Town FC",
+    "description": "Premier League"
+  },
+  "football-data-560694@sports-calendar": {
+    "id": "football-data-560694@sports-calendar",
+    "start": "2026-12-19T15:00:00.000Z",
+    "end": "2026-12-19T17:00:00.000Z",
+    "summary": "⚽ Nottingham Forest FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560699@sports-calendar": {
+    "id": "football-data-560699@sports-calendar",
+    "start": "2026-12-19T15:00:00.000Z",
+    "end": "2026-12-19T17:00:00.000Z",
+    "summary": "⚽ Arsenal FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560705@sports-calendar": {
+    "id": "football-data-560705@sports-calendar",
+    "start": "2026-12-26T15:00:00.000Z",
+    "end": "2026-12-26T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Sunderland AFC",
+    "description": "Premier League"
+  },
+  "football-data-560708@sports-calendar": {
+    "id": "football-data-560708@sports-calendar",
+    "start": "2026-12-26T15:00:00.000Z",
+    "end": "2026-12-26T17:00:00.000Z",
+    "summary": "⚽ Fulham FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560703@sports-calendar": {
+    "id": "football-data-560703@sports-calendar",
+    "start": "2026-12-27T16:30:00.000Z",
+    "end": "2026-12-27T18:30:00.000Z",
+    "summary": "⚽ Manchester United FC vs Nottingham Forest FC",
+    "description": "Premier League"
+  },
+  "football-data-560719@sports-calendar": {
+    "id": "football-data-560719@sports-calendar",
+    "start": "2026-12-29T19:30:00.000Z",
+    "end": "2026-12-29T21:30:00.000Z",
+    "summary": "⚽ Tottenham Hotspur FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560720@sports-calendar": {
+    "id": "football-data-560720@sports-calendar",
+    "start": "2026-12-29T20:15:00.000Z",
+    "end": "2026-12-29T22:15:00.000Z",
+    "summary": "⚽ Everton FC vs Manchester City FC",
+    "description": "Premier League"
+  },
+  "football-data-560717@sports-calendar": {
+    "id": "football-data-560717@sports-calendar",
+    "start": "2026-12-30T19:30:00.000Z",
+    "end": "2026-12-30T21:30:00.000Z",
+    "summary": "⚽ Manchester United FC vs Sunderland AFC",
+    "description": "Premier League"
+  },
+  "football-data-560724@sports-calendar": {
+    "id": "football-data-560724@sports-calendar",
+    "start": "2027-01-01T20:00:00.000Z",
+    "end": "2027-01-01T22:00:00.000Z",
+    "summary": "⚽ Leeds United FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560730@sports-calendar": {
+    "id": "football-data-560730@sports-calendar",
+    "start": "2027-01-02T12:30:00.000Z",
+    "end": "2027-01-02T14:30:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560735@sports-calendar": {
+    "id": "football-data-560735@sports-calendar",
+    "start": "2027-01-05T19:30:00.000Z",
+    "end": "2027-01-05T21:30:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs AFC Bournemouth",
+    "description": "Premier League"
+  },
+  "football-data-560738@sports-calendar": {
+    "id": "football-data-560738@sports-calendar",
+    "start": "2027-01-05T19:30:00.000Z",
+    "end": "2027-01-05T21:30:00.000Z",
+    "summary": "⚽ Everton FC vs Aston Villa FC",
+    "description": "Premier League"
+  },
+  "football-data-560734@sports-calendar": {
+    "id": "football-data-560734@sports-calendar",
+    "start": "2027-01-07T20:00:00.000Z",
+    "end": "2027-01-07T22:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Newcastle United FC",
+    "description": "Premier League"
+  },
+  "football-data-560745@sports-calendar": {
+    "id": "football-data-560745@sports-calendar",
+    "start": "2027-01-16T15:00:00.000Z",
+    "end": "2027-01-16T17:00:00.000Z",
+    "summary": "⚽ Brentford FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560746@sports-calendar": {
+    "id": "football-data-560746@sports-calendar",
+    "start": "2027-01-16T15:00:00.000Z",
+    "end": "2027-01-16T17:00:00.000Z",
+    "summary": "⚽ Aston Villa FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560748@sports-calendar": {
+    "id": "football-data-560748@sports-calendar",
+    "start": "2027-01-16T15:00:00.000Z",
+    "end": "2027-01-16T17:00:00.000Z",
+    "summary": "⚽ Coventry City FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560753@sports-calendar": {
+    "id": "football-data-560753@sports-calendar",
+    "start": "2027-01-23T15:00:00.000Z",
+    "end": "2027-01-23T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Brentford FC",
+    "description": "Premier League"
+  },
+  "football-data-560759@sports-calendar": {
+    "id": "football-data-560759@sports-calendar",
+    "start": "2027-01-23T15:00:00.000Z",
+    "end": "2027-01-23T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Liverpool FC",
+    "description": "Premier League"
+  },
+  "football-data-560760@sports-calendar": {
+    "id": "football-data-560760@sports-calendar",
+    "start": "2027-01-23T15:00:00.000Z",
+    "end": "2027-01-23T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Manchester City FC",
+    "description": "Premier League"
+  },
+  "football-data-560763@sports-calendar": {
+    "id": "football-data-560763@sports-calendar",
+    "start": "2027-01-30T15:00:00.000Z",
+    "end": "2027-01-30T17:00:00.000Z",
+    "summary": "⚽ Brentford FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560764@sports-calendar": {
+    "id": "football-data-560764@sports-calendar",
+    "start": "2027-01-30T15:00:00.000Z",
+    "end": "2027-01-30T17:00:00.000Z",
+    "summary": "⚽ Newcastle United FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560769@sports-calendar": {
+    "id": "football-data-560769@sports-calendar",
+    "start": "2027-01-30T15:00:00.000Z",
+    "end": "2027-01-30T17:00:00.000Z",
+    "summary": "⚽ Liverpool FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560773@sports-calendar": {
+    "id": "football-data-560773@sports-calendar",
+    "start": "2027-02-06T15:00:00.000Z",
+    "end": "2027-02-06T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Hull City AFC",
+    "description": "Premier League"
+  },
+  "football-data-560777@sports-calendar": {
+    "id": "football-data-560777@sports-calendar",
+    "start": "2027-02-06T15:00:00.000Z",
+    "end": "2027-02-06T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Newcastle United FC",
+    "description": "Premier League"
+  },
+  "football-data-560780@sports-calendar": {
+    "id": "football-data-560780@sports-calendar",
+    "start": "2027-02-06T15:00:00.000Z",
+    "end": "2027-02-06T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Chelsea FC",
+    "description": "Premier League"
+  },
+  "football-data-560782@sports-calendar": {
+    "id": "football-data-560782@sports-calendar",
+    "start": "2027-02-10T20:00:00.000Z",
+    "end": "2027-02-10T22:00:00.000Z",
+    "summary": "⚽ Everton FC vs Leeds United FC",
+    "description": "Premier League"
+  },
+  "football-data-560790@sports-calendar": {
+    "id": "football-data-560790@sports-calendar",
+    "start": "2027-02-10T20:00:00.000Z",
+    "end": "2027-02-10T22:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560798@sports-calendar": {
+    "id": "football-data-560798@sports-calendar",
+    "start": "2027-02-20T15:00:00.000Z",
+    "end": "2027-02-20T17:00:00.000Z",
+    "summary": "⚽ Nottingham Forest FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560799@sports-calendar": {
+    "id": "football-data-560799@sports-calendar",
+    "start": "2027-02-20T15:00:00.000Z",
+    "end": "2027-02-20T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Tottenham Hotspur FC",
+    "description": "Premier League"
+  },
+  "football-data-560800@sports-calendar": {
+    "id": "football-data-560800@sports-calendar",
+    "start": "2027-02-20T15:00:00.000Z",
+    "end": "2027-02-20T17:00:00.000Z",
+    "summary": "⚽ Sunderland AFC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560803@sports-calendar": {
+    "id": "football-data-560803@sports-calendar",
+    "start": "2027-02-27T15:00:00.000Z",
+    "end": "2027-02-27T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Arsenal FC",
+    "description": "Premier League"
+  },
+  "football-data-560804@sports-calendar": {
+    "id": "football-data-560804@sports-calendar",
+    "start": "2027-02-27T15:00:00.000Z",
+    "end": "2027-02-27T17:00:00.000Z",
+    "summary": "⚽ Ipswich Town FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560806@sports-calendar": {
+    "id": "football-data-560806@sports-calendar",
+    "start": "2027-02-27T15:00:00.000Z",
+    "end": "2027-02-27T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Nottingham Forest FC",
+    "description": "Premier League"
+  },
+  "football-data-560814@sports-calendar": {
+    "id": "football-data-560814@sports-calendar",
+    "start": "2027-03-03T20:00:00.000Z",
+    "end": "2027-03-03T22:00:00.000Z",
+    "summary": "⚽ Manchester City FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560817@sports-calendar": {
+    "id": "football-data-560817@sports-calendar",
+    "start": "2027-03-03T20:00:00.000Z",
+    "end": "2027-03-03T22:00:00.000Z",
+    "summary": "⚽ Sunderland AFC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560819@sports-calendar": {
+    "id": "football-data-560819@sports-calendar",
+    "start": "2027-03-03T20:00:00.000Z",
+    "end": "2027-03-03T22:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Fulham FC",
+    "description": "Premier League"
+  },
+  "football-data-560822@sports-calendar": {
+    "id": "football-data-560822@sports-calendar",
+    "start": "2027-03-13T15:00:00.000Z",
+    "end": "2027-03-13T17:00:00.000Z",
+    "summary": "⚽ Leeds United FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560830@sports-calendar": {
+    "id": "football-data-560830@sports-calendar",
+    "start": "2027-03-13T15:00:00.000Z",
+    "end": "2027-03-13T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560833@sports-calendar": {
+    "id": "football-data-560833@sports-calendar",
+    "start": "2027-03-20T15:00:00.000Z",
+    "end": "2027-03-20T17:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Coventry City FC",
+    "description": "Premier League"
+  },
+  "football-data-560834@sports-calendar": {
+    "id": "football-data-560834@sports-calendar",
+    "start": "2027-03-20T15:00:00.000Z",
+    "end": "2027-03-20T17:00:00.000Z",
+    "summary": "⚽ Manchester City FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560840@sports-calendar": {
+    "id": "football-data-560840@sports-calendar",
+    "start": "2027-03-20T15:00:00.000Z",
+    "end": "2027-03-20T17:00:00.000Z",
+    "summary": "⚽ Everton FC vs Tottenham Hotspur FC",
+    "description": "Premier League"
+  },
+  "football-data-560844@sports-calendar": {
+    "id": "football-data-560844@sports-calendar",
+    "start": "2027-04-10T14:00:00.000Z",
+    "end": "2027-04-10T16:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Hull City AFC",
+    "description": "Premier League"
+  },
+  "football-data-560849@sports-calendar": {
+    "id": "football-data-560849@sports-calendar",
+    "start": "2027-04-10T14:00:00.000Z",
+    "end": "2027-04-10T16:00:00.000Z",
+    "summary": "⚽ Crystal Palace FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560851@sports-calendar": {
+    "id": "football-data-560851@sports-calendar",
+    "start": "2027-04-10T14:00:00.000Z",
+    "end": "2027-04-10T16:00:00.000Z",
+    "summary": "⚽ Aston Villa FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560852@sports-calendar": {
+    "id": "football-data-560852@sports-calendar",
+    "start": "2027-04-17T14:00:00.000Z",
+    "end": "2027-04-17T16:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Chelsea FC",
+    "description": "Premier League"
+  },
+  "football-data-560858@sports-calendar": {
+    "id": "football-data-560858@sports-calendar",
+    "start": "2027-04-17T14:00:00.000Z",
+    "end": "2027-04-17T16:00:00.000Z",
+    "summary": "⚽ Ipswich Town FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560861@sports-calendar": {
+    "id": "football-data-560861@sports-calendar",
+    "start": "2027-04-17T14:00:00.000Z",
+    "end": "2027-04-17T16:00:00.000Z",
+    "summary": "⚽ Everton FC vs AFC Bournemouth",
+    "description": "Premier League"
+  },
+  "football-data-560865@sports-calendar": {
+    "id": "football-data-560865@sports-calendar",
+    "start": "2027-04-24T14:00:00.000Z",
+    "end": "2027-04-24T16:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Crystal Palace FC",
+    "description": "Premier League"
+  },
+  "football-data-560866@sports-calendar": {
+    "id": "football-data-560866@sports-calendar",
+    "start": "2027-04-24T14:00:00.000Z",
+    "end": "2027-04-24T16:00:00.000Z",
+    "summary": "⚽ Everton FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560873@sports-calendar": {
+    "id": "football-data-560873@sports-calendar",
+    "start": "2027-05-01T14:00:00.000Z",
+    "end": "2027-05-01T16:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Nottingham Forest FC",
+    "description": "Premier League"
+  },
+  "football-data-560874@sports-calendar": {
+    "id": "football-data-560874@sports-calendar",
+    "start": "2027-05-01T14:00:00.000Z",
+    "end": "2027-05-01T16:00:00.000Z",
+    "summary": "⚽ Coventry City FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560877@sports-calendar": {
+    "id": "football-data-560877@sports-calendar",
+    "start": "2027-05-01T14:00:00.000Z",
+    "end": "2027-05-01T16:00:00.000Z",
+    "summary": "⚽ Fulham FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560888@sports-calendar": {
+    "id": "football-data-560888@sports-calendar",
+    "start": "2027-05-08T14:00:00.000Z",
+    "end": "2027-05-08T16:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Sunderland AFC",
+    "description": "Premier League"
+  },
+  "football-data-560890@sports-calendar": {
+    "id": "football-data-560890@sports-calendar",
+    "start": "2027-05-08T14:00:00.000Z",
+    "end": "2027-05-08T16:00:00.000Z",
+    "summary": "⚽ Everton FC vs Hull City AFC",
+    "description": "Premier League"
+  },
+  "football-data-560891@sports-calendar": {
+    "id": "football-data-560891@sports-calendar",
+    "start": "2027-05-08T14:00:00.000Z",
+    "end": "2027-05-08T16:00:00.000Z",
+    "summary": "⚽ AFC Bournemouth vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560897@sports-calendar": {
+    "id": "football-data-560897@sports-calendar",
+    "start": "2027-05-15T14:00:00.000Z",
+    "end": "2027-05-15T16:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Leeds United FC",
+    "description": "Premier League"
+  },
+  "football-data-560898@sports-calendar": {
+    "id": "football-data-560898@sports-calendar",
+    "start": "2027-05-15T14:00:00.000Z",
+    "end": "2027-05-15T16:00:00.000Z",
+    "summary": "⚽ Crystal Palace FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560900@sports-calendar": {
+    "id": "football-data-560900@sports-calendar",
+    "start": "2027-05-15T14:00:00.000Z",
+    "end": "2027-05-15T16:00:00.000Z",
+    "summary": "⚽ Chelsea FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560904@sports-calendar": {
+    "id": "football-data-560904@sports-calendar",
+    "start": "2027-05-23T14:00:00.000Z",
+    "end": "2027-05-23T16:00:00.000Z",
+    "summary": "⚽ Tottenham Hotspur FC vs Manchester United FC",
+    "description": "Premier League"
+  },
+  "football-data-560906@sports-calendar": {
+    "id": "football-data-560906@sports-calendar",
+    "start": "2027-05-23T14:00:00.000Z",
+    "end": "2027-05-23T16:00:00.000Z",
+    "summary": "⚽ Brighton & Hove Albion FC vs Liverpool FC",
+    "description": "Premier League"
+  },
+  "football-data-560910@sports-calendar": {
+    "id": "football-data-560910@sports-calendar",
+    "start": "2027-05-23T14:00:00.000Z",
+    "end": "2027-05-23T16:00:00.000Z",
+    "summary": "⚽ Everton FC vs Arsenal FC",
+    "description": "Premier League"
+  },
+  "football-data-560912@sports-calendar": {
+    "id": "football-data-560912@sports-calendar",
+    "start": "2027-05-30T15:00:00.000Z",
+    "end": "2027-05-30T17:00:00.000Z",
+    "summary": "⚽ Ipswich Town FC vs Everton FC",
+    "description": "Premier League"
+  },
+  "football-data-560913@sports-calendar": {
+    "id": "football-data-560913@sports-calendar",
+    "start": "2027-05-30T15:00:00.000Z",
+    "end": "2027-05-30T17:00:00.000Z",
+    "summary": "⚽ Arsenal FC vs Brighton & Hove Albion FC",
+    "description": "Premier League"
+  },
+  "football-data-560918@sports-calendar": {
+    "id": "football-data-560918@sports-calendar",
+    "start": "2027-05-30T15:00:00.000Z",
+    "end": "2027-05-30T17:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Fulham FC",
+    "description": "Premier League"
+  },
+  "football-data-565776@sports-calendar": {
+    "id": "football-data-565776@sports-calendar",
+    "start": "2026-08-28T18:30:00.000Z",
+    "end": "2026-08-28T20:30:00.000Z",
+    "summary": "⚽ FC Bayern München vs VfB Stuttgart",
+    "description": "Bundesliga"
+  },
+  "football-data-565789@sports-calendar": {
+    "id": "football-data-565789@sports-calendar",
+    "start": "2026-09-05T16:30:00.000Z",
+    "end": "2026-09-05T18:30:00.000Z",
+    "summary": "⚽ FC Schalke 04 vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565800@sports-calendar": {
+    "id": "football-data-565800@sports-calendar",
+    "start": "2026-09-13T15:30:00.000Z",
+    "end": "2026-09-13T17:30:00.000Z",
+    "summary": "⚽ SV 07 Elversberg vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565804@sports-calendar": {
+    "id": "football-data-565804@sports-calendar",
+    "start": "2026-09-18T18:30:00.000Z",
+    "end": "2026-09-18T20:30:00.000Z",
+    "summary": "⚽ FC Bayern München vs 1. FC Union Berlin",
+    "description": "Bundesliga"
+  },
+  "football-data-565819@sports-calendar": {
+    "id": "football-data-565819@sports-calendar",
+    "start": "2026-10-10T13:30:00.000Z",
+    "end": "2026-10-10T15:30:00.000Z",
+    "summary": "⚽ FC Augsburg vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565825@sports-calendar": {
+    "id": "football-data-565825@sports-calendar",
+    "start": "2026-10-17T16:30:00.000Z",
+    "end": "2026-10-17T18:30:00.000Z",
+    "summary": "⚽ FC Bayern München vs RB Leipzig",
+    "description": "Bundesliga"
+  },
+  "football-data-565836@sports-calendar": {
+    "id": "football-data-565836@sports-calendar",
+    "start": "2026-10-25T16:30:00.000Z",
+    "end": "2026-10-25T18:30:00.000Z",
+    "summary": "⚽ SC Freiburg vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565845@sports-calendar": {
+    "id": "football-data-565845@sports-calendar",
+    "start": "2026-10-31T17:30:00.000Z",
+    "end": "2026-10-31T19:30:00.000Z",
+    "summary": "⚽ FC Bayern München vs Borussia Dortmund",
+    "description": "Bundesliga"
+  },
+  "football-data-565851@sports-calendar": {
+    "id": "football-data-565851@sports-calendar",
+    "start": "2026-11-07T14:30:00.000Z",
+    "end": "2026-11-07T16:30:00.000Z",
+    "summary": "⚽ 1. FSV Mainz 05 vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565859@sports-calendar": {
+    "id": "football-data-565859@sports-calendar",
+    "start": "2026-11-20T19:30:00.000Z",
+    "end": "2026-11-20T21:30:00.000Z",
+    "summary": "⚽ FC Bayern München vs 1. FC Köln",
+    "description": "Bundesliga"
+  },
+  "football-data-565874@sports-calendar": {
+    "id": "football-data-565874@sports-calendar",
+    "start": "2026-11-28T14:30:00.000Z",
+    "end": "2026-11-28T16:30:00.000Z",
+    "summary": "⚽ Hamburger SV vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565882@sports-calendar": {
+    "id": "football-data-565882@sports-calendar",
+    "start": "2026-12-05T00:00:00.000Z",
+    "end": "2026-12-05T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs SC Paderborn 07",
+    "description": "Bundesliga"
+  },
+  "football-data-565891@sports-calendar": {
+    "id": "football-data-565891@sports-calendar",
+    "start": "2026-12-12T00:00:00.000Z",
+    "end": "2026-12-12T02:00:00.000Z",
+    "summary": "⚽ TSG 1899 Hoffenheim vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565894@sports-calendar": {
+    "id": "football-data-565894@sports-calendar",
+    "start": "2026-12-19T00:00:00.000Z",
+    "end": "2026-12-19T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs SV Werder Bremen",
+    "description": "Bundesliga"
+  },
+  "football-data-565907@sports-calendar": {
+    "id": "football-data-565907@sports-calendar",
+    "start": "2027-01-09T00:00:00.000Z",
+    "end": "2027-01-09T02:00:00.000Z",
+    "summary": "⚽ Borussia Mönchengladbach vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565916@sports-calendar": {
+    "id": "football-data-565916@sports-calendar",
+    "start": "2027-01-13T00:00:00.000Z",
+    "end": "2027-01-13T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs Bayer 04 Leverkusen",
+    "description": "Bundesliga"
+  },
+  "football-data-565921@sports-calendar": {
+    "id": "football-data-565921@sports-calendar",
+    "start": "2027-01-16T00:00:00.000Z",
+    "end": "2027-01-16T02:00:00.000Z",
+    "summary": "⚽ Eintracht Frankfurt vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565934@sports-calendar": {
+    "id": "football-data-565934@sports-calendar",
+    "start": "2027-01-23T00:00:00.000Z",
+    "end": "2027-01-23T02:00:00.000Z",
+    "summary": "⚽ VfB Stuttgart vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565946@sports-calendar": {
+    "id": "football-data-565946@sports-calendar",
+    "start": "2027-01-30T00:00:00.000Z",
+    "end": "2027-01-30T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs FC Schalke 04",
+    "description": "Bundesliga"
+  },
+  "football-data-565954@sports-calendar": {
+    "id": "football-data-565954@sports-calendar",
+    "start": "2027-02-06T00:00:00.000Z",
+    "end": "2027-02-06T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs SV 07 Elversberg",
+    "description": "Bundesliga"
+  },
+  "football-data-565958@sports-calendar": {
+    "id": "football-data-565958@sports-calendar",
+    "start": "2027-02-13T00:00:00.000Z",
+    "end": "2027-02-13T02:00:00.000Z",
+    "summary": "⚽ 1. FC Union Berlin vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565972@sports-calendar": {
+    "id": "football-data-565972@sports-calendar",
+    "start": "2027-02-20T00:00:00.000Z",
+    "end": "2027-02-20T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs FC Augsburg",
+    "description": "Bundesliga"
+  },
+  "football-data-565981@sports-calendar": {
+    "id": "football-data-565981@sports-calendar",
+    "start": "2027-02-27T00:00:00.000Z",
+    "end": "2027-02-27T02:00:00.000Z",
+    "summary": "⚽ RB Leipzig vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-565986@sports-calendar": {
+    "id": "football-data-565986@sports-calendar",
+    "start": "2027-03-03T00:00:00.000Z",
+    "end": "2027-03-03T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs SC Freiburg",
+    "description": "Bundesliga"
+  },
+  "football-data-565992@sports-calendar": {
+    "id": "football-data-565992@sports-calendar",
+    "start": "2027-03-06T00:00:00.000Z",
+    "end": "2027-03-06T02:00:00.000Z",
+    "summary": "⚽ Borussia Dortmund vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-566008@sports-calendar": {
+    "id": "football-data-566008@sports-calendar",
+    "start": "2027-03-13T00:00:00.000Z",
+    "end": "2027-03-13T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs 1. FSV Mainz 05",
+    "description": "Bundesliga"
+  },
+  "football-data-566016@sports-calendar": {
+    "id": "football-data-566016@sports-calendar",
+    "start": "2027-03-20T00:00:00.000Z",
+    "end": "2027-03-20T02:00:00.000Z",
+    "summary": "⚽ 1. FC Köln vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-566021@sports-calendar": {
+    "id": "football-data-566021@sports-calendar",
+    "start": "2027-04-03T00:00:00.000Z",
+    "end": "2027-04-03T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs Hamburger SV",
+    "description": "Bundesliga"
+  },
+  "football-data-566029@sports-calendar": {
+    "id": "football-data-566029@sports-calendar",
+    "start": "2027-04-10T00:00:00.000Z",
+    "end": "2027-04-10T02:00:00.000Z",
+    "summary": "⚽ SC Paderborn 07 vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-566040@sports-calendar": {
+    "id": "football-data-566040@sports-calendar",
+    "start": "2027-04-17T00:00:00.000Z",
+    "end": "2027-04-17T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs TSG 1899 Hoffenheim",
+    "description": "Bundesliga"
+  },
+  "football-data-566046@sports-calendar": {
+    "id": "football-data-566046@sports-calendar",
+    "start": "2027-04-24T00:00:00.000Z",
+    "end": "2027-04-24T02:00:00.000Z",
+    "summary": "⚽ SV Werder Bremen vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-566063@sports-calendar": {
+    "id": "football-data-566063@sports-calendar",
+    "start": "2027-05-08T00:00:00.000Z",
+    "end": "2027-05-08T02:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs Borussia Mönchengladbach",
+    "description": "Bundesliga"
+  },
+  "football-data-566069@sports-calendar": {
+    "id": "football-data-566069@sports-calendar",
+    "start": "2027-05-15T00:00:00.000Z",
+    "end": "2027-05-15T02:00:00.000Z",
+    "summary": "⚽ Bayer 04 Leverkusen vs FC Bayern München",
+    "description": "Bundesliga"
+  },
+  "football-data-566078@sports-calendar": {
+    "id": "football-data-566078@sports-calendar",
+    "start": "2027-05-22T13:30:00.000Z",
+    "end": "2027-05-22T15:30:00.000Z",
+    "summary": "⚽ FC Bayern München vs Eintracht Frankfurt",
+    "description": "Bundesliga"
+  },
+  "football-data-575337@sports-calendar": {
+    "id": "football-data-575337@sports-calendar",
+    "start": "2026-09-10T19:00:00.000Z",
+    "end": "2026-09-10T21:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs FK Bodø/Glimt",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575338@sports-calendar": {
+    "id": "football-data-575338@sports-calendar",
+    "start": "2026-09-10T19:00:00.000Z",
+    "end": "2026-09-10T21:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs Sabah FK",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575345@sports-calendar": {
+    "id": "football-data-575345@sports-calendar",
+    "start": "2026-10-13T19:00:00.000Z",
+    "end": "2026-10-13T21:00:00.000Z",
+    "summary": "⚽ Club Atlético de Madrid vs Manchester United FC",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575347@sports-calendar": {
+    "id": "football-data-575347@sports-calendar",
+    "start": "2026-10-13T19:00:00.000Z",
+    "end": "2026-10-13T21:00:00.000Z",
+    "summary": "⚽ Viking FK vs FC Bayern München",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575368@sports-calendar": {
+    "id": "football-data-575368@sports-calendar",
+    "start": "2026-10-21T16:45:00.000Z",
+    "end": "2026-10-21T18:45:00.000Z",
+    "summary": "⚽ Como 1907 vs Manchester United FC",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575372@sports-calendar": {
+    "id": "football-data-575372@sports-calendar",
+    "start": "2026-10-21T19:00:00.000Z",
+    "end": "2026-10-21T21:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs Arsenal FC",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575381@sports-calendar": {
+    "id": "football-data-575381@sports-calendar",
+    "start": "2026-11-03T20:00:00.000Z",
+    "end": "2026-11-03T22:00:00.000Z",
+    "summary": "⚽ Club Atlético de Madrid vs FC Bayern München",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575383@sports-calendar": {
+    "id": "football-data-575383@sports-calendar",
+    "start": "2026-11-03T20:00:00.000Z",
+    "end": "2026-11-03T22:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs AS Roma",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575410@sports-calendar": {
+    "id": "football-data-575410@sports-calendar",
+    "start": "2026-11-25T20:00:00.000Z",
+    "end": "2026-11-25T22:00:00.000Z",
+    "summary": "⚽ Lille OSC vs FC Bayern München",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575411@sports-calendar": {
+    "id": "football-data-575411@sports-calendar",
+    "start": "2026-11-25T20:00:00.000Z",
+    "end": "2026-11-25T22:00:00.000Z",
+    "summary": "⚽ Sporting Clube de Portugal vs Manchester United FC",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575417@sports-calendar": {
+    "id": "football-data-575417@sports-calendar",
+    "start": "2026-12-08T20:00:00.000Z",
+    "end": "2026-12-08T22:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs SK Slavia Praha",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575420@sports-calendar": {
+    "id": "football-data-575420@sports-calendar",
+    "start": "2026-12-08T20:00:00.000Z",
+    "end": "2026-12-08T22:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs RB Leipzig",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575300@sports-calendar": {
+    "id": "football-data-575300@sports-calendar",
+    "start": "2027-01-20T20:00:00.000Z",
+    "end": "2027-01-20T22:00:00.000Z",
+    "summary": "⚽ Manchester United FC vs FC Bayern München",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575299@sports-calendar": {
+    "id": "football-data-575299@sports-calendar",
+    "start": "2027-01-27T20:00:00.000Z",
+    "end": "2027-01-27T22:00:00.000Z",
+    "summary": "⚽ FC Bayern München vs Real Betis Balompié",
+    "description": "UEFA Champions League"
+  },
+  "football-data-575310@sports-calendar": {
+    "id": "football-data-575310@sports-calendar",
+    "start": "2027-01-27T20:00:00.000Z",
+    "end": "2027-01-27T22:00:00.000Z",
+    "summary": "⚽ Villarreal CF vs Manchester United FC",
+    "description": "UEFA Champions League"
+  }
+}

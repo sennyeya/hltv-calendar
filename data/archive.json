@@ -1100,8 +1100,8 @@
   },
   "pandascore-1685174@sports-calendar": {
     "id": "pandascore-1685174@sports-calendar",
-    "start": "2026-09-20T12:00:00.000Z",
-    "end": "2026-09-20T15:00:00.000Z",
+    "start": "2026-09-20T12:01:12.000Z",
+    "end": "2026-09-20T13:35:57.000Z",
     "summary": "🎮 Vitality vs FURIA",
     "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
   },
@@ -1124,6 +1124,13 @@
     "start": "2026-09-17T13:08:05.000Z",
     "end": "2026-09-17T14:47:39.000Z",
     "summary": "🎮 Vitality vs magic",
+    "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
+  },
+  "pandascore-1685175@sports-calendar": {
+    "id": "pandascore-1685175@sports-calendar",
+    "start": "2026-09-20T15:02:17.000Z",
+    "end": "2026-09-20T18:02:17.000Z",
+    "summary": "🎮 Aurora Gaming vs Vitality",
     "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
   }
 }

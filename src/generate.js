@@ -9,8 +9,9 @@ const MAX_PAGES = 10;
 const CS2_ALIASES = {
   falcons: ["falcons", "team falcons"],
   spirit: ["spirit", "team spirit"],
+  vitality: ["vitality", "team vitality"],
 };
-const CS2_NAMES = { falcons: "Falcons", spirit: "Team Spirit" };
+const CS2_NAMES = { falcons: "Falcons", spirit: "Team Spirit", vitality: "Vitality" };
 
 const SOCCER_ALIASES = {
   everton: ["everton", "everton fc"],
@@ -135,7 +136,7 @@ async function main() {
     const events = cs2Relevant.filter(m => cs2Opponents(m).map(cs2Slug).includes(slug)).map(cs2Event);
     await fs.writeFile(path.resolve(`public/cs2/${slug}.ics`), calendarString(`CS2 — ${CS2_NAMES[slug]}`, events));
   }
-  await fs.writeFile(path.resolve("public/cs2/falcons-spirit.ics"), calendarString("CS2 — Falcons + Team Spirit", cs2Relevant.map(cs2Event)));
+  await fs.writeFile(path.resolve("public/cs2/falcons-spirit.ics"), calendarString("CS2 — Falcons + Team Spirit", cs2Relevant.filter(m => cs2Opponents(m).map(cs2Slug).some(slug => slug === "falcons" || slug === "spirit")).map(cs2Event)));
 
   for (const slug of Object.keys(SOCCER_NAMES)) {
     const events = soccerRelevant.filter(m => [soccerSlug(m.homeTeam), soccerSlug(m.awayTeam)].includes(slug)).map(soccerEvent);
@@ -154,6 +155,7 @@ async function main() {
     ["all.ics", "Everything"],
     ["cs2/falcons.ics", "Falcons"],
     ["cs2/spirit.ics", "Team Spirit"],
+    ["cs2/vitality.ics", "Vitality"],
     ["soccer/everton.ics", "Everton"],
     ["soccer/brighton.ics", "Brighton"],
     ["soccer/manchester-united.ics", "Manchester United"],

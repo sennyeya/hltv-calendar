@@ -1,56 +1,53 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { HLTV } from "@beermonster/hltv";
 import ical from "ical-generator";
 
-const TEAMS = {
-  falcons: { id: 11283, name: "Falcons" },
-  spirit: { id: 7020, name: "Spirit" },
+const API = "https://api.pandascore.co/csgo/matches/upcoming";
+const TEAM_ALIASES = {
+  falcons: ["falcons", "team falcons"],
+  spirit: ["spirit", "team spirit"],
 };
-
+const TEAM_NAMES = { falcons: "Falcons", spirit: "Team Spirit" };
 const OUTPUTS = [
   ["falcons", ["falcons"]],
   ["spirit", ["spirit"]],
   ["falcons-spirit", ["falcons", "spirit"]],
 ];
-
 const outDir = path.resolve("public/cs2");
 
 function clean(value) {
   return String(value ?? "").replace(/\s+/g, " ").trim();
 }
 
-function teamSlug(name) {
-  const normalized = clean(name).toLowerCase();
-  return Object.entries(TEAMS).find(([, team]) =>
-    normalized === team.name.toLowerCase() ||
-    (team.name === "Spirit" && normalized === "team spirit")
+function slugForTeam(team) {
+  const values = [team?.name, team?.acronym, team?.slug]
+    .filter(Boolean)
+    .map((v) => clean(v).toLowerCase());
+  return Object.entries(TEAM_ALIASES).find(([, aliases]) =>
+    aliases.some((alias) => values.includes(alias))
   )?.[0];
 }
 
-function matchUrl(match) {
-  return match.id ? `https://www.hltv.org/matches/${match.id}/_` : undefined;
+function opponents(match) {
+  return (match.opponents ?? []).map((entry) => entry.opponent).filter(Boolean);
 }
 
 function toEvent(match) {
-  if (!match.date || !match.team1?.name || !match.team2?.name) return null;
-
-  const start = new Date(match.date);
+  const teams = opponents(match);
+  if (teams.length !== 2 || !match.begin_at) return null;
+  const start = new Date(match.begin_at);
   if (Number.isNaN(start.getTime())) return null;
-
-  const end = new Date(start.getTime() + 3 * 60 * 60 * 1000);
-  const eventName = clean(match.event?.name);
-  const format = clean(match.format);
-  const description = [eventName, format].filter(Boolean).join(" · ");
-  const url = matchUrl(match);
-
+  const end = match.end_at ? new Date(match.end_at) : new Date(start.getTime() + 3 * 60 * 60 * 1000);
+  const league = clean(match.league?.name);
+  const serie = clean(match.serie?.full_name || match.serie?.name);
+  const tournament = clean(match.tournament?.name);
   return {
-    id: `hltv-match-${match.id}@hltv-calendar`,
+    id: `pandascore-match-${match.id}@hltv-calendar`,
     start,
-    end,
-    summary: `${clean(match.team1.name)} vs ${clean(match.team2.name)}`,
-    description,
-    url,
+    end: Number.isNaN(end.getTime()) ? new Date(start.getTime() + 3 * 60 * 60 * 1000) : end,
+    summary: `${clean(teams[0].name)} vs ${clean(teams[1].name)}`,
+    description: [league, serie, tournament].filter(Boolean).join(" · "),
+    url: match.official_stream_url || undefined,
   };
 }
 
@@ -60,41 +57,55 @@ function makeCalendar(name, matches) {
     prodId: { company: "hltv-calendar", product: "CS2 calendar" },
     timezone: "UTC",
   });
-
   for (const match of matches) {
     const event = toEvent(match);
     if (event) calendar.createEvent(event);
   }
-
   return calendar.toString();
 }
 
-async function main() {
-  await fs.mkdir(outDir, { recursive: true });
+async function fetchMatches() {
+  const token = process.env.PANDASCORE_API_KEY;
+  if (!token) throw new Error("PANDASCORE_API_KEY is not set");
 
-  // One HLTV request for both teams. The package is unofficial and HLTV may
-  // occasionally block automated requests, so the workflow does not delete
-  // previously published calendars unless generation succeeds.
-  const matches = await HLTV.getMatches({
-    teamIds: Object.values(TEAMS).map((team) => team.id),
+  const url = new URL(API);
+  url.searchParams.set("per_page", "100");
+  url.searchParams.set("sort", "begin_at");
+
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/json",
+      "User-Agent": "hltv-calendar/1.0",
+    },
   });
 
-  const upcoming = matches
-    .filter((match) => match.date && match.date > Date.now() - 15 * 60 * 1000)
-    .sort((a, b) => a.date - b.date);
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`PandaScore returned HTTP ${response.status}: ${body.slice(0, 500)}`);
+  }
+  return response.json();
+}
+
+async function main() {
+  const matches = await fetchMatches();
+  if (!Array.isArray(matches)) throw new Error("Unexpected PandaScore response");
+
+  const relevant = matches.filter((match) => {
+    const slugs = opponents(match).map(slugForTeam);
+    return slugs.includes("falcons") || slugs.includes("spirit");
+  });
+
+  await fs.mkdir(outDir, { recursive: true });
 
   for (const [filename, wanted] of OUTPUTS) {
-    const selected = upcoming.filter((match) => {
-      const participants = [teamSlug(match.team1?.name), teamSlug(match.team2?.name)];
-      return wanted.some((slug) => participants.includes(slug));
+    const selected = relevant.filter((match) => {
+      const slugs = opponents(match).map(slugForTeam);
+      return wanted.some((slug) => slugs.includes(slug));
     });
-
     await fs.writeFile(
       path.join(outDir, `${filename}.ics`),
-      makeCalendar(
-        `CS2 — ${wanted.map((slug) => TEAMS[slug].name).join(" + ")}`,
-        selected
-      ),
+      makeCalendar(`CS2 — ${wanted.map((slug) => TEAM_NAMES[slug]).join(" + ")}`, selected),
       "utf8"
     );
   }
@@ -102,11 +113,10 @@ async function main() {
   const generated = new Date().toISOString();
   await fs.writeFile(
     path.resolve("public/index.html"),
-    `<!doctype html><meta charset="utf-8"><title>HLTV Calendar</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px system-ui;max-width:42rem;margin:3rem auto;padding:0 1rem;line-height:1.5}a{display:block;margin:.8rem 0}</style><h1>HLTV Calendar</h1><p>Spoiler-free CS2 calendar feeds. Updated automatically from upcoming HLTV matches.</p><a href="cs2/falcons.ics">Falcons</a><a href="cs2/spirit.ics">Team Spirit</a><a href="cs2/falcons-spirit.ics">Falcons + Team Spirit</a><small>Last generated: ${generated}</small>`,
+    `<!doctype html><meta charset="utf-8"><title>HLTV Calendar</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px system-ui;max-width:42rem;margin:3rem auto;padding:0 1rem;line-height:1.5}a{display:block;margin:.8rem 0}</style><h1>HLTV Calendar</h1><p>Spoiler-free CS2 calendar feeds for Falcons and Team Spirit, powered by PandaScore.</p><a href="cs2/falcons.ics">Falcons</a><a href="cs2/spirit.ics">Team Spirit</a><a href="cs2/falcons-spirit.ics">Falcons + Team Spirit</a><small>Last generated: ${generated}</small>`,
     "utf8"
   );
-
-  console.log(`Generated calendars from ${upcoming.length} upcoming matches.`);
+  console.log(`Fetched ${matches.length} upcoming matches; ${relevant.length} involve Falcons or Team Spirit.`);
 }
 
 main().catch((error) => {

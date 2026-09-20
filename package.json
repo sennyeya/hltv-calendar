@@ -7,7 +7,6 @@
     "generate": "node src/generate.js"
   },
   "dependencies": {
-    "@beermonster/hltv": "3.5.23",
     "ical-generator": "9.0.0"
   }
 }

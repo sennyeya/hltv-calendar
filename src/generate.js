@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import ical from "ical-generator";
 
-const PANDASCORE_API = "https://api.pandascore.co/csgo/matches/upcoming";
+const PANDASCORE_API = "https://api.pandascore.co/csgo/matches";
 const FOOTBALL_API = "https://api.football-data.org/v4";
 const MAX_PAGES = 10;
 
@@ -25,6 +25,7 @@ const SOCCER_NAMES = {
   bayern: "Bayern Munich",
 };
 const SOCCER_COMPETITIONS = ["PL", "BL1", "CL"];
+const ARCHIVE_PATH = path.resolve("data/archive.json");
 
 function clean(v) { return String(v ?? "").replace(/\s+/g, " ").trim(); }
 function normalize(v) { return clean(v).toLowerCase(); }
@@ -86,7 +87,8 @@ async function fetchCs2() {
     const url = new URL(PANDASCORE_API);
     url.searchParams.set("per_page", "100");
     url.searchParams.set("page", String(page));
-    url.searchParams.set("sort", "begin_at");
+    url.searchParams.set("sort", "-begin_at");
+    url.searchParams.set("filter[status]", "finished,not_started,running");
     const response = await fetch(url, { headers: { Authorization: `Bearer ${token}`, Accept: "application/json", "User-Agent": "sports-calendar/1.0" } });
     if (!response.ok) throw new Error(`PandaScore HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
     const pageMatches = await response.json();
@@ -106,7 +108,7 @@ async function fetchSoccer() {
   }
   const byId = new Map();
   for (const competition of SOCCER_COMPETITIONS) {
-    const url = `${FOOTBALL_API}/competitions/${competition}/matches?status=SCHEDULED`;
+    const url = `${FOOTBALL_API}/competitions/${competition}/matches`;
     const response = await fetch(url, { headers: { "X-Auth-Token": token, Accept: "application/json" } });
     if (!response.ok) throw new Error(`football-data.org ${competition} HTTP ${response.status}: ${(await response.text()).slice(0, 500)}`);
     const data = await response.json();
@@ -115,8 +117,13 @@ async function fetchSoccer() {
   return [...byId.values()];
 }
 
+async function loadArchive() {
+  try { return JSON.parse(await fs.readFile(ARCHIVE_PATH, "utf8")); }
+  catch (error) { if (error.code === "ENOENT") return {}; throw error; }
+}
+
 async function main() {
-  const [cs2Matches, soccerMatches] = await Promise.all([fetchCs2(), fetchSoccer()]);
+  const [cs2Matches, soccerMatches, archive] = await Promise.all([fetchCs2(), fetchSoccer(), loadArchive()]);
 
   const cs2Relevant = cs2Matches.filter(m => cs2Opponents(m).map(cs2Slug).some(Boolean));
   const soccerRelevant = soccerMatches.filter(m => [soccerSlug(m.homeTeam), soccerSlug(m.awayTeam)].some(Boolean));
@@ -135,8 +142,11 @@ async function main() {
     await fs.writeFile(path.resolve(`public/soccer/${slug}.ics`), calendarString(`Soccer — ${SOCCER_NAMES[slug]}`, events));
   }
 
-  const allEvents = [...cs2Relevant.map(cs2Event), ...soccerRelevant.map(soccerEvent)]
-    .filter(Boolean).sort((a, b) => a.start - b.start);
+  const discovered = [...cs2Relevant.map(cs2Event), ...soccerRelevant.map(soccerEvent)].filter(Boolean);
+  for (const event of discovered) archive[event.id] = { ...event, start: event.start.toISOString(), end: event.end.toISOString() };
+  await fs.mkdir(path.dirname(ARCHIVE_PATH), { recursive: true });
+  await fs.writeFile(ARCHIVE_PATH, JSON.stringify(archive, null, 2) + "\n");
+  const allEvents = Object.values(archive).map(event => ({ ...event, start: new Date(event.start), end: new Date(event.end) })).sort((a, b) => a.start - b.start);
   await fs.writeFile(path.resolve("public/all.ics"), calendarString("Sports", allEvents));
 
   const generated = new Date().toISOString();

@@ -1097,5 +1097,33 @@
     "end": "2027-01-27T22:00:00.000Z",
     "summary": "⚽ Villarreal CF vs Manchester United FC",
     "description": "UEFA Champions League"
+  },
+  "pandascore-1685174@sports-calendar": {
+    "id": "pandascore-1685174@sports-calendar",
+    "start": "2026-09-20T12:00:00.000Z",
+    "end": "2026-09-20T15:00:00.000Z",
+    "summary": "🎮 Vitality vs FURIA",
+    "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
+  },
+  "pandascore-1685172@sports-calendar": {
+    "id": "pandascore-1685172@sports-calendar",
+    "start": "2026-09-19T15:25:09.000Z",
+    "end": "2026-09-19T18:18:27.000Z",
+    "summary": "🎮 Aurora Gaming vs Vitality",
+    "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
+  },
+  "pandascore-1685169@sports-calendar": {
+    "id": "pandascore-1685169@sports-calendar",
+    "start": "2026-09-18T18:39:04.000Z",
+    "end": "2026-09-18T20:19:07.000Z",
+    "summary": "🎮 Vitality vs FURIA",
+    "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
+  },
+  "pandascore-1685164@sports-calendar": {
+    "id": "pandascore-1685164@sports-calendar",
+    "start": "2026-09-17T13:08:05.000Z",
+    "end": "2026-09-17T14:47:39.000Z",
+    "summary": "🎮 Vitality vs magic",
+    "description": "StarLadder StarSeries · Fall 2026 · Playoffs"
   }
 }
